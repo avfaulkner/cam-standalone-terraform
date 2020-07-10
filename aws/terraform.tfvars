@@ -8,4 +8,5 @@ instance_name = "af-cam-standalone"
 ssh_cidr_blocks = [
   ""  # Place appropriate cidr blocks as a list of strings here
 ]
-ami = "ami-000e7ce4dd68e7a11" # CentOS 8 base ami
+ami = "ami-000e7ce4dd68e7a11" # CentOS 8 base ami for us-east-2 region
+# See this link for CentOS AMIs for other regions: https://wiki.centos.org/Cloud/AWS
