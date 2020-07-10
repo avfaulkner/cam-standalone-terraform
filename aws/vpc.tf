@@ -1,16 +1,16 @@
 # VPC
-resource "aws_vpc" "af-cas" {
+resource "aws_vpc" "cam" {
   cidr_block = "10.0.0.0/16"
   enable_dns_support   = true
   enable_dns_hostnames = true
 
   tags = {
-    Name = "af-cas"
+    Name = "cam-"+var.owner
   }
 }
 
-resource "aws_route_table" "af-rt" {
-  vpc_id = aws_vpc.af-cas.id
+resource "aws_route_table" "cam-rt" {
+  vpc_id = aws_vpc.cam.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -18,12 +18,12 @@ resource "aws_route_table" "af-rt" {
   }
 
   tags = {
-    Name = "af-rt-public"
+    Name = "rt-public"
   }
 }
 
-resource "aws_route_table" "af-rt-private" {
-  vpc_id = aws_vpc.af-cas.id
+resource "aws_route_table" "cam-rt-private" {
+  vpc_id = aws_vpc.cam.id
 
   route {
     cidr_block     = "0.0.0.0/0"
@@ -31,30 +31,30 @@ resource "aws_route_table" "af-rt-private" {
   }
 
   tags = {
-    Name = "af-rt-private"
+    Name = "rt-private"
   }
 }
 
 
 resource "aws_subnet" "subnet-public" {
   cidr_block = "10.0.10.0/24"
-  vpc_id = aws_vpc.af-cas.id
+  vpc_id = aws_vpc.cam.id
 
   tags = {
-    Name = "cac-test-public"
+    Name = "cam-public"
   }
 }
 
 resource "aws_subnet" "subnet-private" {
   cidr_block = "10.0.11.0/24"
-  vpc_id = aws_vpc.af-cas.id
+  vpc_id = aws_vpc.cam.id
 }
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.af-cas.id
+  vpc_id = aws_vpc.cam.id
 
   tags = {
-    Name = "af-igw"
+    Name = "cam-igw"
   }
 }
 
@@ -62,7 +62,7 @@ resource "aws_eip" "eip-nat" {
   vpc = true
 
   tags = {
-    Name = "af-eip-nat"
+    Name = "cam-eip-nat"
   }
 }
 

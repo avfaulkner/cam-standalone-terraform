@@ -2,7 +2,7 @@
 resource "aws_security_group" "cam-sg" {
   name        = "cam-sg"
   description = "cam-sg"
-  vpc_id      = aws_vpc.af-cas.id
+  vpc_id      = aws_vpc.cam.id
 }
 
 # inbound ssh access
