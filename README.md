@@ -25,7 +25,7 @@ terraform init
 Planning
 
 ```
-terraform init
+terraform plan
 ```
 
 Apply
