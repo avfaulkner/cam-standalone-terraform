@@ -1,6 +1,6 @@
 # cam-standalone-terraform
 
-Currently WIP
+##*Currently WIP*
 
 Stacks for deploying CAM Standalone:
 - AWS
