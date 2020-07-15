@@ -1,13 +1,13 @@
 # cam-standalone-terraform
 
-##*Currently WIP*
+***Currently WIP***
 
 Stacks for deploying CAM Standalone:
 - AWS
 - Azure
 - GCP
 
-Builds basic network infra and server. 
+Builds basic network infra and single instance. 
 
 Future: will add DC server to connect.
 
@@ -34,5 +34,6 @@ Apply
 terraform apply
 ```
 
-
-
+**Notes**
+GCP: Compute Engine API must be enabled in the console prior
+to running the Terraform script. 
