@@ -5,7 +5,8 @@ resource "aws_vpc" "cam" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "cam-"+var.owner
+    Name = "cam"
+    Owner = var.owner
   }
 }
 
