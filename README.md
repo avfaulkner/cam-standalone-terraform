@@ -16,6 +16,8 @@ Future: will add DC server to connect.
 - Terraform >= 0.12.26
 
 ## Usage
+__~~**Update the terraform.tfvars file with your desired variables**__~~
+
 Initialize the environment
 
 ```
@@ -35,5 +37,6 @@ terraform apply
 ```
 
 **Notes**
-GCP: Compute Engine API must be enabled in the console prior
+- GCP: Compute Engine API must be enabled in the console prior
 to running the Terraform script. 
+
