@@ -9,7 +9,7 @@ Stacks for deploying CAM Standalone:
 
 Builds basic network infra and single instance. 
 
-Future: will add DC server to connect.
+Future: will add DC server.
 
 ## Requirements
 ### Tooling
